@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomás Falco · Editor de video</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.typekit.net https://p.typekit.net; font-src https://fonts.gstatic.com https://use.typekit.net; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="Edición de video vertical y horizontal, anuncios, eventos y diseño para redes. Tomás Falco, editor freelance para emprendedores y creadores de contenido.">
+<meta name="theme-color" content="#100B2B">
+<meta property="og:title" content="Tomás Falco · Editor de video">
+<meta property="og:description" content="Videos para emprendedores y creadores que quieren crecer en redes.">
+<meta property="og:image" content="imagenes/campana-runteddy.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Italiana&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/moe6iiq.css">
+<link rel="stylesheet" href="css/styles.css?v=6">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="is-loading">
+
+<!-- FONDO: grilla, luces y marcas de encuadre -->
+<div class="bg" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+
+<canvas class="stage3d" aria-hidden="true"></canvas>
+
+<div class="loader" aria-hidden="true">
+  <img src="imagenes/rame-logo.png" alt="" class="loader-logo">
+  <span class="loader-bar"><span></span></span>
+</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+
+<header class="topbar">
+  <a href="#inicio" class="topbar-logo" aria-label="Volver al inicio"><img src="imagenes/rame-logo.png" alt="Ramé Visuals"></a>
+  <nav aria-label="Principal">
+    <a href="#trabajos" data-nav="trabajos">Trabajos</a>
+    <a href="#servicios" data-nav="servicios">Servicios</a>
+    <a href="#sobre-mi" data-nav="sobre-mi">Sobre mí</a>
+    <a href="#contacto" class="topbar-cta">Contacto</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-stick">
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="room-shade" aria-hidden="true"></div>
+    <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="hero-content">
+      <p class="hero-status"><span class="dot"></span>Disponible para proyectos freelance</p>
+      <h1 class="hero-title">
+        <span class="line"><span>Edito videos para</span></span>
+        <span class="line"><span>emprendedores y</span></span>
+        <span class="line"><span>creadores que</span></span>
+        <span class="line"><span>quieren crecer.</span></span>
+      </h1>
+      <div class="hero-foot">
+        <p class="hero-lead">Clips verticales, videos para YouTube, anuncios y eventos, con diseño para tus redes si lo necesitás. Trabajo a distancia con clientes de cualquier lugar.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" data-magnet href="https://wa.me/5493454246603?text=Hola%20Tom%C3%A1s%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+          <a class="btn btn-line" data-magnet href="#trabajos">Ver trabajos</a>
+        </div>
+      </div>
+    </div>
+    <p class="hero-hint" aria-hidden="true">Bajá para entrar. Arrastrá para girar.</p>
+
+    <!-- Lo que aparece adentro de la sala: datos del trabajo que tenés enfrente -->
+    <div class="room" hidden>
+      <p class="room-count" aria-live="polite"><span data-room-n>1</span> de <span data-room-total>8</span></p>
+      <p class="room-title" data-room-title></p>
+      <p class="room-tag" data-room-tag></p>
+      <div class="room-actions">
+        <button class="btn btn-solid" type="button" data-room-open>Ver completo</button>
+        <a class="room-skip" href="#trabajos">Saltar a trabajos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CINTA -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Clips verticales</span><b>✦</b><span>YouTube</span><b>✦</b><span>Anuncios</span><b>✦</b><span>Eventos</span><b>✦</b><span>Diseño para redes</span><b>✦</b><span>Motion graphics</span><b>✦</b>
+    <span>Clips verticales</span><b>✦</b><span>YouTube</span><b>✦</b><span>Anuncios</span><b>✦</b><span>Eventos</span><b>✦</b><span>Diseño para redes</span><b>✦</b><span>Motion graphics</span><b>✦</b>
+  </div>
+</div>
+
+<!-- TRABAJOS -->
+<section class="work" id="trabajos">
+  <div class="work-pin">
+    <div class="work-head">
+      <h2 class="reveal-title"><span>Trabajos seleccionados</span></h2>
+      <p data-reveal>Videos verticales para Reels y TikTok y una campaña en motion. Abrí cualquiera para verlo completo y con sonido.</p>
+    </div>
+    <div class="work-timeline">
+      <span class="work-playhead" aria-hidden="true"></span>
+      <div class="work-track">
+      <article class="clip" data-ring="videos/bp-electronica.jpg" data-title="B&amp;P Electrónica">
+        <button class="clip-media" data-video="videos/bp-electronica.mp4" data-cursor="Reproducir" aria-label="Reproducir B&amp;P Electrónica">
+          <video muted loop playsinline preload="none" poster="videos/bp-electronica.jpg" src="videos/bp-electronica.mp4"></video>
+          <span class="clip-tag">Reel</span>
+          <span class="clip-dur"></span>
+        </button>
+        <h3>B&amp;P Electrónica</h3>
+        <p>Reel para comercio. Edición y subtítulos.</p>
+      </article>
+      <article class="clip" data-ring="videos/runteddy.jpg" data-title="Runteddy">
+        <button class="clip-media" data-video="videos/runteddy.mp4" data-cursor="Reproducir" aria-label="Reproducir anuncio de Runteddy">
+          <video muted loop playsinline preload="none" poster="videos/runteddy.jpg" src="videos/runteddy.mp4"></video>
+          <span class="clip-tag">Anuncio</span>
+          <span class="clip-dur"></span>
+        </button>
+        <h3>Runteddy</h3>
+        <p>Anuncio de app. Texto animado y motion.</p>
+      </article>
+      <article class="clip" data-ring="videos/compras-tiempo.jpg" data-title="No comprás un video">
+        <button class="clip-media" data-video="videos/compras-tiempo.mp4" data-cursor="Reproducir" aria-label="Reproducir No comprás un video">
+          <video muted loop playsinline preload="none" poster="videos/compras-tiempo.jpg" src="videos/compras-tiempo.mp4"></video>
+          <span class="clip-tag">Talking head</span>
+          <span class="clip-dur"></span>
+        </button>
+        <h3>No comprás un video</h3>
+        <p>Talking head con subtítulos dinámicos.</p>
+      </article>
+      <article class="clip" data-ring="videos/tutorial-color.jpg" data-title="Color en CapCut">
+        <button class="clip-media" data-video="videos/tutorial-color.mp4" data-cursor="Reproducir" aria-label="Reproducir tutorial de color en CapCut">
+          <video muted loop playsinline preload="none" poster="videos/tutorial-color.jpg" src="videos/tutorial-color.mp4"></video>
+          <span class="clip-tag">Tutorial</span>
+          <span class="clip-dur"></span>
+        </button>
+        <h3>Color en CapCut</h3>
+        <p>Tutorial con capturas, zooms y memes.</p>
+      </article>
+      <article class="clip clip-wide" data-ring="videos/bp-campana.jpg" data-title="Campaña B&amp;P">
+        <button class="clip-media" data-video="videos/bp-campana.mp4" data-cursor="Reproducir" aria-label="Reproducir presentación de la campaña B&amp;P">
+          <video muted loop playsinline preload="none" poster="videos/bp-campana.jpg" src="videos/bp-campana.mp4"></video>
+          <span class="clip-tag">Motion</span>
+          <span class="clip-dur"></span>
+        </button>
+        <h3>Campaña B&amp;P Electrónica</h3>
+        <p>Presentación en motion graphics de una campaña con carrusel, reel y vía pública.</p>
+      </article>
+      <span class="work-ruler" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISEÑO -->
+<section class="design" id="diseno">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal-title"><span>Diseño y 3D</span></h2>
+      <p data-reveal>Piezas gráficas, campañas y escenas 3D de la facultad y de proyectos propios.</p>
+    </div>
+    <div class="design-grid">
+      <figure class="piece piece-a" data-ring="imagenes/campana-runteddy.jpg" data-title="Deja Huella">
+        <div class="piece-img"><img src="imagenes/campana-runteddy.jpg" alt="Afiche Deja Huella de Runteddy en un refugio de colectivo" loading="lazy"></div>
+        <figcaption><strong>Deja Huella, Runteddy</strong><span>Campaña en vía pública</span></figcaption>
+      </figure>
+      <figure class="piece piece-b" data-ring="imagenes/fracta.jpg" data-title="Fracta">
+        <div class="piece-img"><img src="imagenes/fracta.jpg" alt="Pantalla de inicio del videojuego Fracta" loading="lazy"></div>
+        <figcaption><strong>Fracta</strong><span>Pantalla de inicio de videojuego</span></figcaption>
+      </figure>
+      <figure class="piece piece-c" data-ring="imagenes/escena-3d.jpg" data-title="Living gamer">
+        <div class="piece-img"><img src="imagenes/escena-3d.jpg" alt="Escena 3D de un living con dos personajes jugando a la consola" loading="lazy"></div>
+        <figcaption><strong>Living gamer</strong><span>Modelado e iluminación 3D</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<!-- Cada precio tiene su valor en dólares (data-usd) y en pesos (data-ars). Para cambiarlos, editá esos números. -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal-title"><span>Servicios</span></h2>
+      <div class="sec-side">
+        <p data-reveal>Precios de referencia, cada proyecto se arma a medida.</p>
+        <div class="currency" role="group" aria-label="Ver precios en" data-reveal>
+          <span class="currency-label">Ver precios en</span>
+          <div class="currency-btns">
+            <button type="button" data-cur="ARS">Pesos</button>
+            <button type="button" data-cur="USD" aria-pressed="true" class="is-on">Dólares</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="service-grid">
+      <li class="service" data-reveal>
+        <h3>Edición de reels y contenido para redes</h3>
+        <p class="service-desc">Subtítulos dinámicos, ritmo, música y SFX.</p>
+        <p class="service-price"><span class="from">Desde</span> <span class="cur">USD</span> <strong data-usd="15" data-ars="22500">15</strong> <span class="per">por reel</span></p>
+        <p class="service-more">Pack mensual de 8 reels desde <span data-usd="100" data-ars="150000">USD 100</span></p>
+      </li>
+      <li class="service" data-reveal>
+        <h3>Videos para YouTube</h3>
+        <p class="service-desc">Edición completa, cortes, color y miniatura.</p>
+        <p class="service-price"><span class="from">Desde</span> <span class="cur">USD</span> <strong data-usd="40" data-ars="45000">40</strong> <span class="per">por video</span></p>
+      </li>
+      <li class="service" data-reveal>
+        <h3>Publicidad y anuncios para marcas</h3>
+        <p class="service-desc">Videos cortos con 2 o 3 variantes de gancho para pauta.</p>
+        <p class="service-price"><span class="from">Desde</span> <span class="cur">USD</span> <strong data-usd="50" data-ars="62500">50</strong></p>
+      </li>
+      <li class="service" data-reveal>
+        <h3>Edición de eventos y bodas</h3>
+        <p class="service-desc">Highlight de 3 a 7 minutos con música y color.</p>
+        <p class="service-price"><span class="from">Desde</span> <span class="cur">USD</span> <strong data-usd="80" data-ars="110000">80</strong></p>
+      </li>
+      <li class="service" data-reveal>
+        <h3>Motion graphics y animación 2D</h3>
+        <p class="service-desc">Intros, lower thirds, títulos animados.</p>
+        <p class="service-price"><span class="from">Desde</span> <span class="cur">USD</span> <strong data-usd="30" data-ars="45000">30</strong></p>
+      </li>
+      <li class="service" data-reveal>
+        <h3>Diseño gráfico</h3>
+        <p class="service-desc">Piezas para redes y miniaturas.</p>
+        <p class="service-price"><span class="from">Desde</span> <span class="cur">USD</span> <strong data-usd="15" data-ars="22500">15</strong> <span class="per">por pieza</span></p>
+        <p class="service-more">Branding (logo e identidad visual) desde <span data-usd="120" data-ars="150000">USD 120</span></p>
+      </li>
+      <li class="service service-custom" data-reveal>
+        <div>
+          <h3>Plan personalizado</h3>
+          <p class="service-desc">¿Necesitás algo distinto? Armamos un plan a medida según tu proyecto.</p>
+        </div>
+        <a class="btn btn-solid" data-magnet href="https://wa.me/5493454246603?text=Hola%20Tom%C3%A1s%2C%20vi%20tu%20portafolio%20y%20quiero%20un%20presupuesto" target="_blank" rel="noopener">Pedir presupuesto</a>
+      </li>
+    </ul>
+
+    <ul class="service-notes" data-reveal>
+      <li class="note-main" data-note-usd="Precios en USD. Para clientes de Argentina también trabajo en pesos, consultame." data-note-ars="Precios en pesos argentinos, de referencia: te confirmo el valor final al pasarte el presupuesto. También trabajo en USD.">Precios en USD. Para clientes de Argentina también trabajo en pesos, consultame.</li>
+      <li>Correcciones y plazos de entrega se acuerdan según el proyecto.</li>
+      <li>La entrega final de los archivos se realiza una vez confirmado el pago.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="process" id="proceso">
+  <div class="wrap">
+    <h2 class="reveal-title"><span>Cómo trabajamos</span></h2>
+    <div class="process-track">
+      <div class="process-rail" aria-hidden="true"><span class="process-head"></span></div>
+      <ol class="steps">
+        <li data-reveal><span class="step-n">1</span><h3>Me escribís</h3><p>Por WhatsApp o Instagram. Me contás qué hacés y qué tipo de video necesitás.</p></li>
+        <li data-reveal><span class="step-n">2</span><h3>Me pasás el material</h3><p>Tus grabaciones por Drive o WeTransfer, y alguna referencia de lo que te gusta.</p></li>
+        <li data-reveal><span class="step-n">3</span><h3>Primera versión</h3><p>La revisás y la ajustamos en dos rondas de cambios.</p></li>
+        <li data-reveal><span class="step-n">4</span><h3>Publicás</h3><p>Te entrego los archivos listos para subir, en el formato de cada red.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="about" id="sobre-mi">
+  <div class="wrap about-grid">
+    <div class="about-media"><div class="about-photo"><img src="imagenes/tomas-falco.jpg" alt="Retrato de Tomás Falco" loading="lazy"></div></div>
+    <div class="about-text">
+      <h2 class="reveal-title"><span>Hola, soy Tomás</span></h2>
+      <p class="about-lead">Editor de video freelance y estudiante de Diseño Multimedial. Trabajo desde Concordia, Entre Ríos, con clientes de cualquier lugar.</p>
+      <p data-reveal>Me especializo en contenido para redes: el ritmo, los subtítulos y los primeros segundos que deciden si alguien se queda. Edité desde reels para comercios y anuncios de apps hasta casamientos, y si el proyecto pide diseño o motion, también lo resuelvo.</p>
+      <p data-reveal>Sumo inteligencia artificial a mi flujo de trabajo: limpieza de audio, subtítulos automáticos que después reviso a mano, generación de recursos visuales y variantes de ganchos. Así te entrego más rápido sin perder el criterio de edición.</p>
+      <dl class="about-skills" data-reveal>
+        <div><dt>Video</dt><dd>Verticales, YouTube, anuncios y eventos</dd></div>
+        <div><dt>Diseño para redes</dt><dd>Posts, carruseles, historias y miniaturas</dd></div>
+        <div><dt>Motion</dt><dd>Texto animado y gráficos en movimiento</dd></div>
+        <div><dt>También</dt><dd>3D y web, por proyecto</dd></div>
+      </dl>
+      <div class="tools" data-reveal>
+        <span>Premiere Pro</span><span>CapCut</span><span>After Effects</span><span>Photoshop</span><span>Illustrator</span><span>Herramientas de IA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2 class="contact-title reveal-title"><span>¿Tenés videos guardados</span><span>sin editar?</span></h2>
+    <p class="contact-sub" data-reveal>Mandame un mensaje con lo que necesitás y te respondo con una propuesta y el precio.</p>
+    <div class="contact-ctas" data-reveal>
+      <a class="btn btn-solid btn-big" data-magnet href="https://wa.me/5493454246603?text=Hola%20Tom%C3%A1s%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+      <a class="btn btn-line btn-big" data-magnet href="https://ig.me/m/tomasfalc0" target="_blank" rel="noopener">DM en Instagram</a>
+    </div>
+  </div>
+  <footer class="footer wrap">
+    <span>© 2026 Tomás Falco</span>
+    <a href="https://instagram.com/tomasfalc0" target="_blank" rel="noopener">@tomasfalc0</a>
+    <span>En Concordia son las <time class="clock">--:--</time></span>
+  </footer>
+</section>
+
+</main>
+
+<a class="wa-float btn btn-solid is-hidden" href="https://wa.me/5493454246603?text=Hola%20Tom%C3%A1s%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener">WhatsApp</a>
+
+<dialog class="player" aria-label="Reproductor de video">
+  <div class="player-inner">
+    <video controls playsinline></video>
+    <div class="player-bar">
+      <span class="player-title"></span>
+      <button class="player-close" type="button">Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js" } }
+</script>
+<script type="module" src="js/main.js?v=6"></script>
+<script>
+  // si algo de lo externo no carga, la página igual se muestra
+  setTimeout(function(){ if(document.body.classList.contains('is-loading')){ document.body.classList.remove('is-loading'); var l=document.querySelector('.loader'); if(l) l.remove(); document.documentElement.classList.remove('js'); } }, 7000);
+</script>
+</body>
+</html>
