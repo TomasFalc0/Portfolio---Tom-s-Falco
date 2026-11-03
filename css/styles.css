@@ -72,7 +72,8 @@ main{position:relative;z-index:1}
 h1,h2,.room-title,.contact-title{font-family:var(--display);font-weight:var(--w-display);word-spacing:.1em}
 h3,.about-lead,.marquee-track,.player-title{font-family:var(--sub);font-weight:var(--w-sub);word-spacing:.16em}
 h2{font-size:var(--t-2xl);line-height:1.08}
-h3{font-size:var(--t-xl);line-height:1.18}
+/* títulos de tarjetas, clips y pasos: en estos tamaños Light queda muy fina */
+h3{font-size:var(--t-xl);line-height:1.18;font-weight:var(--w-display)}
 
 /* títulos: cada palabra sube desde su máscara (el margen deja lugar a tildes y colas) */
 .reveal-title>span{display:block}
